@@ -1,10 +1,10 @@
 {
  "name": "1Globe",
  "display" : "standalone",
- "scope" : "https://1globe.github.io/en/globe/",
- "start_url" : "https://1globe.github.io/en/globe/",
+ "scope" : "https://1globe.link/globe/",
+ "start_url" : "https://1globe.link/globe/",
  "short_name" : "1Globe",
- "description" : "Globe Earth 3D explorer",
+ "description" : "1Globe Earth 3D explorer",
  "theme_color" : "rgb(31, 71, 150)",
  "background_color" : "#404040",
  "icons": [
