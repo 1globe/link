@@ -1,0 +1,481 @@
+{
+  "imageryLayers": [
+    {
+      "key": "bingSat",
+      "name": "Bing Satellite",
+      "icon": "images/layers/bing_logo-16.png",
+      "tooltip": "Bing Maps satellite imagery",
+      "text": "The Bing Maps aerial imagery web mapping service offers worldwide orthographic aerial and satellite imagery. Coverage varies by region, with the most detailed coverage in the USA and United Kingdom.  Coverage in different areas within a country also varies in detail based on the availability of imagery for that region. Bing Maps is continuously adding imagery in new areas and updating coverage in areas of existing coverage.",
+      "link": "https://www.bing.com/maps",
+      "provider": {
+        "fsDirName": "Bing_Satellite",
+        "fileExt": "jpg",
+        "tilingScheme": {
+          "type": "WebMercator",
+          "options": {
+            "numberOfLevelZeroTilesX": 2,
+            "numberOfLevelZeroTilesY": 2
+          }
+        },
+        "url": "https://ecn.{s}.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?n=z&g=9415",
+        "subdomains": ["t0", "t1", "t2", "t3"],
+        "customTags": { "quadkey": "tileXYToBingQuadKey" }
+      },
+      "visible": true,
+      "kind": "satmap"
+    },
+    {
+      "key": "googleSat",
+      "name": "Google Satellite",
+      "icon": "images/layers/google-maps-16.png",
+      "tooltip": "Google Maps satellite imagery",
+      "text": "Google Maps is a free online map from Google. It's accessible through your web browser or as an app for mobile devices. You can use Google Maps to get step-by-step directions, find information about local businesses, and a whole lot more.",
+      "link": "https://google.com/maps",
+      "provider": {
+        "fsDirName": "Google_Satellite",
+        "fileExt": "png",
+        "url": "https://mt{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+        "subdomains": [0, 1, 2, 3]
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "yandexSat",
+      "name": "Yandex Satellite",
+      "icon": "images/layers/yandex_logo-16.png",
+      "tooltip": "Yandex Maps satellite imagery",
+      "text": "Yandex Maps is a Russian web mapping service developed by Yandex. The service provides detailed maps of the whole world. It includes a search, information about traffic jams, routing and street panoramas. Yandex.Maps is the most popular cartographic service in Russia.",
+      "link": "https://yandex.com/maps",
+      "provider": {
+        "fsDirName": "Yandex_Satellite",
+        "fileExt": "png",
+        "tilingScheme": {
+          "type": "EllipsoidMercator"
+        },
+        "url": "https://core-sat.maps.yandex.net/tiles?l=sat&x={x}&y={y}&z={z}"
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "enabled": false,
+      "key": "arcgisSatellite",
+      "name": "ArcGIS Satellite",
+      "icon": "images/layers/esri-icon-16.png",
+      "tooltip": "ArcGIS Online satellite imagery",
+      "text": "World Imagery provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. In addition to commercial sources, the World Imagery map features high-resolution aerial photography contributed by the GIS User Community.",
+      "link": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "provider": {
+        "fsDirName": "ArcGIS_Satellite",
+        "fileExt": "jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}/",
+        "maximumLevel": 9
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "mapsforfreeRel",
+      "name": "M-F-Free Relief",
+      "icon": "images/layers/maps-for-free.ico",
+      "tooltip": "Maps-for-Free Physical World map imagery",
+      "text": "The vision of Maps-For-Free is to offer free worldwide relief maps and other layers which can easily be integrated into existing map projects.",
+      "link": "https://maps-for-free.com",
+      "provider": {
+        "fsDirName": "MapsForFree_Relief",
+        "fileExt": "jpg",
+        "proxy": "https://images.weserv.nl/?url=",
+        "url": "https://maps-for-free.com/layer/relief/z{z}/row{y}/{z}_{x}-{y}.jpg",
+        "maximumLevel": 11
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "enabled": false,
+      "key": "natgeoTerrain",
+      "name": "NatGeo Terrain",
+      "icon": "images/layers/nat_geo_16.png",
+      "tooltip": "National Geographic Terrain Map imagery",
+      "text": "This map portrays surface elevation as shaded relief. This map is used as a basemap layer to add shaded relief to other GIS maps, such as the ArcGIS Online World Street Map. It is especially useful in maps that do not contain orthoimagery. The shaded relief imagery was developed by Esri using GTOPO30, Shuttle Radar Topography Mission (SRTM), and National Elevation Data (NED) data from the USGS.",
+      "link": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer",
+      "provider": {
+        "fsDirName": "NatGeo_Terrain",
+        "fileExt": "jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}/",
+        "maximumLevel": 13
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "enabled": false,
+      "key": "arcgisTerrain",
+      "name": "ArcGIS Terrain",
+      "icon": "images/layers/esri-icon-16.png",
+      "tooltip": "ArcGIS Online - World Hillshade",
+      "text": "This map portrays elevation as an artistic hillshade. This map is designed to be used as a backdrop for topographical, soil, hydro, landcover or other outdoor recreational maps. The map was compiled from a variety of sources from several data providers.",
+      "link": "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer",
+      "provider": {
+        "fsDirName": "ArcGIS_Terrain",
+        "fileExt": "jpg",
+        "url": "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}",
+        "maximumLevel": 9
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "googleTerrain",
+      "name": "Google Terrain",
+      "icon": "images/layers/google-maps-16.png",
+      "tooltip": "Google Maps terrain imagery",
+      "text": "Google Maps is a free online map from Google. It's accessible through your web browser or as an app for mobile devices. You can use Google Maps to get step-by-step directions, find information about local businesses, and a whole lot more.",
+      "link": "https://google.com/maps",
+      "provider": {
+        "fsDirName": "Google_Terrain",
+        "fileExt": "png",
+        "url": "https://mt{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}&scale=2",
+        "subdomains": [0, 1, 2, 3]
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "enabled": false,
+      "key": "arcgisPhysicalMap",
+      "name": "ArcGIS Physical",
+      "icon": "images/layers/esri-icon-16.png",
+      "tooltip": "ArcGIS Online - Physical Map",
+      "text": "This map presents the Natural Earth physical map at 1.24km per pixel for the world and 500m for the coterminous United States.",
+      "link": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer",
+      "provider": {
+        "fsDirName": "ArcGIS_PhysicalMap",
+        "fileExt": "jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}/",
+        "maximumLevel": 8
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "arcgisNatGeo",
+      "name": "ArcGIS NatGeo",
+      "icon": "images/layers/esri-icon-16.png",
+      "tooltip": "ArcGIS Online - National Geographic Style map imagery",
+      "text": "This component tile layer displays Ecological Land Units (ELU) and bathymetry fused with multi-directional hillshade and undersea relief at small to mid scales. It is designed for use as a component base layer in the National Geographic Style Map. It is not intended for stand-alone use.",
+      "link": "https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/NatGeoStyleBase/MapServer",
+      "provider": {
+        "fsDirName": "ArcGIS_NatGeo",
+        "fileExt": "jpg",
+        "url": "https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/NatGeoStyleBase/MapServer/tile/{z}/{y}/{x}",
+        "maximumLevel": 9
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "natgeoWorldMap",
+      "name": "NatGeo World",
+      "icon": "images/layers/nat_geo_16.png",
+      "tooltip": "National Geographic map imagery",
+      "text": "This map is designed to be used as a general reference map for informational and educational purposes as well as a base map by GIS professionals and other users for creating web maps and web mapping applications. The map was developed by National Geographic and Esri and reflects the distinctive National Geographic cartographic style in a multi-scale reference map of the world.",
+      "link": "https://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer",
+      "provider": {
+        "fsDirName": "NatGeo_WorldMap",
+        "fileExt": "jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}/",
+        "maximumLevel": 16
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "enabled": false,
+      "key": "natgeoTopoMap",
+      "name": "NatGeo Topo",
+      "icon": "images/layers/nat_geo_16.png",
+      "tooltip": "National Geographic Topographic map imagery",
+      "text": "This map is designed to be used as a basemap by GIS professionals and as a reference map by anyone. The map includes administrative boundaries, cities, water features, physiographic features, parks, landmarks, highways, roads, railways, and airports overlaid on land cover and shaded relief imagery for added context.\nThis basemap was compiled from a variety of best available sources from several data providers, including USGS, U.S. EPA, U.S. NPS, FAO of the United Nations, Department of NRCAN, GeoBase, Agriculture and Agri-Food Canada, Garmin, HERE, Esri, OpenStreetMap contributors, and the GIS User Community.",
+      "link": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+      "provider": {
+        "fsDirName": "NatGeo_TopoMap",
+        "fileExt": "jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}/",
+        "maximumLevel": 13
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "openTopoMap",
+      "name": "OpenTopoMap",
+      "icon": "images/layers/opentopomap-16.png",
+      "tooltip": "OpenTopoMap map imagery",
+      "text": "OpenTopoMap is a free, topographic map that is generated from the data of the OpenStreetMap and SRTM elevation data. The map style is based on the official maps and relies on good legibility through high contrast and balanced signatures.",
+      "link": "https://opentopomap.org",
+      "provider": {
+        "fsDirName": "OpenTopo_Map",
+        "fileExt": "png",
+        "url": "https://a.tile.opentopomap.org/{z}/{x}/{y}.png",
+        "maximumLevel_": 16
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "osmMap",
+      "name": "OpenStreetMap",
+      "icon": "images/layers/osm-logo-16.png",
+      "tooltip": "OpenStreetMap map imagery",
+      "text": "OpenStreetMap is a collaborative project to create a free editable map of the world. The geodata underlying the map is considered the primary output of the project. The creation and growth of OSM has been motivated by restrictions on use or availability of map data across much of the world, and the advent of inexpensive portable satellite navigation devices.",
+      "link": "https://www.openstreetmap.org",
+      "provider": {
+        "fsDirName": "Osm_Map",
+        "fileExt": "png",
+        "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "subdomains": ["a", "b", "c"]
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "bingMap",
+      "name": "Bing Maps",
+      "icon": "images/layers/bing_logo-16.png",
+      "tooltip": "Bing Maps maps imagery",
+      "text": "The Bing Maps aerial imagery web mapping service offers worldwide orthographic aerial and satellite imagery. Coverage varies by region, with the most detailed coverage in the USA and United Kingdom.  Coverage in different areas within a country also varies in detail based on the availability of imagery for that region. Bing Maps is continuously adding imagery in new areas and updating coverage in areas of existing coverage.",
+      "link": "https://www.bing.com/maps",
+      "provider": {
+        "fsDirName": "Bing_Map",
+        "tilingScheme": {
+          "type": "WebMercator",
+          "options": {
+            "numberOfLevelZeroTilesX": 2,
+            "numberOfLevelZeroTilesY": 2
+          }
+        },
+        "proxy": "https://images.weserv.nl/?url=",
+        "url": "https://ak.dynamic.{s}.tiles.virtualearth.net/comp/ch/{quadkey}?it=G,L&src=o&shading=hill&og=1226&n=z",
+        "subdomains": ["t0", "t1", "t2", "t3"],
+        "customTags": { "quadkey": "tileXYToBingQuadKey" }
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "googleMap",
+      "name": "Google Maps",
+      "icon": "images/layers/google-maps-16.png",
+      "tooltip": "Google Maps maps imagery",
+      "text": "Google Maps is a free online map from Google. It's accessible through your web browser or as an app for mobile devices. You can use Google Maps to get step-by-step directions, find information about local businesses, and a whole lot more.",
+      "link": "https://google.com/maps",
+      "provider": {
+        "fsDirName": "Google_Map",
+        "fileExt": "png",
+        "url": "https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+        "subdomains": [0, 1, 2, 3]
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "yandexMap",
+      "name": "Yandex Maps",
+      "icon": "images/layers/yandex_logo-16.png",
+      "tooltip": "Yandex Maps maps imagery",
+      "text": "Yandex Maps is a Russian web mapping service developed by Yandex. The service provides detailed maps of the whole world. It includes a search, information about traffic jams, routing and street panoramas. Yandex.Maps is the most popular cartographic service in Russia. Maps are available in four versions: maps, satellite images, satellite images with captions, and legend (hybrid).",
+      "link": "https://yandex.com/maps",
+      "provider": {
+        "fsDirName": "Yandex_Map",
+        "fileExt": "png",
+        "tilingScheme": {
+          "type": "EllipsoidMercator"
+        },
+        "url": "https://vec{s}.maps.yandex.net/tiles?l=map&x={x}&y={y}&z={z}&scale=2",
+        "subdomains": ["01", "02", "03", "04"]
+      },
+      "visible": false,
+      "kind": "satmap"
+    },
+    {
+      "key": "gswWater",
+      "name": "Global Water",
+      "icon": "images/layers/water-16.png",
+      "tooltip": "Global Surface Water imagery",
+      "text": "The Global Surface Water Occurrence map shows location and temporal distribution of water surfaces at the global scale over the past 3.7 decades, and provides statistics on their extent and change to support better informed water-management decision-making.",
+      "link": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_2_GlobalSurfaceWater",
+      "provider": {
+        "fsDirName": "Gsw_Water",
+        "fileExt": "png",
+        "url": "https://storage.googleapis.com/global-surface-water/tiles2019/occurrence/{z}/{x}/{y}.png",
+        "maximumLevel": 13
+      },
+      "visible": false,
+      "alpha": 0.6,
+      "kind": "water"
+    },
+    {
+      "enabled": false,
+      "key": "mapsforfreeWater",
+      "name": "M-F-Free Water",
+      "icon": "images/layers/maps-for-free.ico",
+      "tooltip": "Maps-for-Free Water map imagery",
+      "text": "The vision of Maps-For-Free is to offer free worldwide relief maps and other layers which can easily be integrated into existing map projects.",
+      "link": "https://maps-for-free.com",
+      "provider": {
+        "fsDirName": "MapsForFree_Water",
+        "fileExt": "gif",
+        "proxy": "https://images.weserv.nl/?url=",
+        "url": "https://maps-for-free.com/layer/water/z{z}/row{y}/{z}_{x}-{y}.gif",
+        "maximumLevel": 11
+      },
+      "visible": false,
+      "alpha": 0.8,
+      "kind": "water"
+    },
+    {
+      "key": "bingSkl",
+      "name": "Bing Roads",
+      "icon": "images/layers/bing_logo-16.png",
+      "tooltip": "Bing Maps names and roads imagery",
+      "text": "The Bing Maps aerial imagery web mapping service offers worldwide orthographic aerial and satellite imagery. Coverage varies by region, with the most detailed coverage in the USA and United Kingdom.  Coverage in different areas within a country also varies in detail based on the availability of imagery for that region. Bing Maps is continuously adding imagery in new areas and updating coverage in areas of existing coverage.",
+      "link": "https://www.bing.com/maps",
+      "provider": {
+        "fsDirName": "Bing_Skl",
+        "tilingScheme": {
+          "type": "WebMercator",
+          "options": {
+            "numberOfLevelZeroTilesX": 2,
+            "numberOfLevelZeroTilesY": 2
+          }
+        },
+        "proxy": "https://images.weserv.nl/?url=",
+        "url": "http://ak.dynamic.{s}.tiles.virtualearth.net/comp/ch/{quadkey}?it=Z,L,LA&src=o&shading=hill&og=1226&n=z",
+        "subdomains": ["t0", "t1", "t2", "t3"],
+        "customTags": { "quadkey": "tileXYToBingQuadKey" }
+      },
+      "visible": true,
+      "alpha": 0.8,
+      "kind": "skl"
+    },
+    {
+      "key": "googleSkl",
+      "name": "Google Roads",
+      "icon": "images/layers/google-maps-16.png",
+      "tooltip": "Google Maps names and roads imagery",
+      "text": "Google Maps is a free online map from Google. It's accessible through your web browser or as an app for mobile devices. You can use Google Maps to get step-by-step directions, find information about local businesses, and a whole lot more.",
+      "link": "https://google.com/maps",
+      "provider": {
+        "fsDirName": "Google_Skl",
+        "fileExt": "png",
+        "url": "https://mt{s}.google.com/vt/lyrs=h&x={x}&y={y}&z={z}",
+        "subdomains": [0, 1, 2, 3]
+      },
+      "visible": false,
+      "alpha": 0.8,
+      "kind": "skl"
+    },
+    {
+      "key": "yandexSkl",
+      "name": "Yandex Roads",
+      "icon": "images/layers/yandex_logo-16.png",
+      "tooltip": "Yandex Maps names and roads imagery",
+      "text": "Yandex Maps is a Russian web mapping service developed by Yandex. The service provides detailed maps of the whole world. It includes a search, information about traffic jams, routing and street panoramas. Yandex.Maps is the most popular cartographic service in Russia. Maps are available in four versions: maps, satellite images, satellite images with captions, and legend (hybrid).",
+      "link": "https://yandex.com/maps",
+      "provider": {
+        "fsDirName": "Yandex_Skl",
+        "fileExt": "png",
+        "tilingScheme": {
+          "type": "EllipsoidMercator"
+        },
+        "url": "https://vec{s}.maps.yandex.net/tiles?l=skl&lang=en_En&x={x}&y={y}&z={z}&scale=2",
+        "subdomains": ["01", "02", "03", "04"]
+      },
+      "visible": false,
+      "alpha": 0.8,
+      "kind": "skl"
+    },
+    {
+      "enabled": false,
+      "key": "cacheCoverage",
+      "name": "Cache Coverage",
+      "icon": "images/layers/1globe-16.png",
+      "tooltip": "Cache coverage of layer.",
+      "text": "This is a coverage of cache for each layer.",
+      "provider": {
+        "cacheLayerKey": "bingSat",
+        "levelOffsets": {
+          "bingSat": -1,
+          "bingMap": -1,
+          "bingSkl": -1
+        }
+      },
+      "properties": [
+        {
+          "text": "Layer:",
+          "name": "layer",
+          "type": "select",
+          "value": {
+            "type": "select-option"
+          }
+        },
+        {
+          "text": "Color:",
+          "name": "color",
+          "type": "select",
+          "value": {
+            "type": "select-option",
+            "values": [
+              { "value": "#BDB76B", "text": "DARKKHAKI" },
+              { "value": "#6B8E23", "text": "OLIVEDRAB" },
+              { "value": "#FFD700", "text": "GOLD" },
+              { "value": "#FF0000", "text": "RED" },
+              { "value": "#FFFF00", "text": "YELLOW" },
+              { "value": "#008000", "text": "GREEN" },
+              { "value": "#0000FF", "text": "BLUE" },
+              { "value": "#FFFFFF", "text": "WHITE" },
+              { "value": "#000000", "text": "BLACK" }              
+            ]
+          }
+        }
+      ],
+      "visible": false,
+      "alpha": 0.7,
+      "kind": "coverage"
+    },
+    {
+      "enabled": false,
+      "key": "cgiarCoverage",
+      "name": "Cgiar Coverage",
+      "icon": "images/layers/1globe-16.png",
+      "tooltip": "Cgiar Srtm Elevation coverage",
+      "text": "This is coverage of digital elevation data of Consultative Group for International Agricultural Research (CGIAR)  of Shuttle Radar Topography Mission (SRTM).",
+      "properties": [
+        {
+          "text": "Color:",
+          "name": "color",
+          "type": "select",
+          "value": {
+            "type": "select-option",
+            "values": [
+              { "value": "#FFD700", "text": "GOLD" },
+              { "value": "#BDB76B", "text": "DARKKHAKI" },
+              { "value": "#6B8E23", "text": "OLIVEDRAB" },
+              { "value": "#FF0000", "text": "RED" },
+              { "value": "#FFFF00", "text": "YELLOW" },
+              { "value": "#008000", "text": "GREEN" },
+              { "value": "#0000FF", "text": "BLUE" },
+              { "value": "#FFFFFF", "text": "WHITE" },
+              { "value": "#000000", "text": "BLACK" }              
+            ]
+          }
+        }
+      ],
+      "visible": false,
+      "alpha": 0.7,
+      "kind": "coverage"
+    }
+ ]
+}

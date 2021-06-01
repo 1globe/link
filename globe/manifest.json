@@ -1,0 +1,28 @@
+{
+ "name": "1Globe",
+ "display" : "standalone",
+ "scope" : "https://1globe.github.io/en/globe/",
+ "start_url" : "https://1globe.github.io/en/globe/",
+ "short_name" : "1Globe",
+ "description" : "Globe Earth 3D explorer",
+ "theme_color" : "rgb(31, 71, 150)",
+ "background_color" : "#404040",
+ "icons": [
+    {
+      "src": "images/ico/extensionmanagementpage-48-48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/ico/favicon-16-16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "images/ico/installprocess-128-128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "images/ico/launchericon-144-144.png",
+      "sizes": "144x144"
+    }
+  ]
+}
